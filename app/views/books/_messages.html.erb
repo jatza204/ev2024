@@ -1,0 +1,4 @@
+<!-- app/views/books/_messages.html.erb -->
+<% messages.each do |message| %>
+  <p><%= message[:timestamp].strftime("%H:%M:%S") %> <strong><%= message[:username] %>:</strong> <%= message[:body] %></p>
+<% end %>

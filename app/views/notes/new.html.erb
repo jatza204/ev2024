@@ -1,0 +1,6 @@
+<%= form_with(url: notes_path, method: :post) do |f| %>
+  <%= f.hidden_field :book_id, value: params[:book_id] %>
+  <%= f.label :note, 'Evaluate (1-10)' %>
+  <%= f.number_field :note, in: 1..10 %>
+  <%= f.submit 'Submit' %>
+<% end %>

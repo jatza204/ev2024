@@ -1,0 +1,5 @@
+<!-- Przyciski do sortowania -->
+<div>
+  <%= link_to 'Sortuj po ID', books_path(sort: nil), class: 'btn' %>
+  <%= link_to 'Sortuj po średniej ocenie', books_path(sort: 'average_rating'), class: 'btn' %>
+</div>

@@ -1,0 +1,4 @@
+<!-- Informacja o zalogowanym użytkowniku na górze strony -->
+<% if current_user %>
+  <p class="user-info">Zalogowany użytkownik: <%= current_user.nick %></p>
+<% end %>

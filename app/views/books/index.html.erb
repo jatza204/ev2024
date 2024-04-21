@@ -1,0 +1,15 @@
+<!-- Informacja o zalogowanym użytkowniku na górze strony -->
+<%= render 'user_info' %>
+
+<!-- Przyciski do sortowania -->
+<%= render 'sorting_buttons' %>
+
+<!-- Tabela -->
+<div id="books-table">
+  <%= render 'books_table', books: @books %>
+</div>
+
+<!-- Other parts of your main index file -->
+<%= render 'chat' %>
+
+

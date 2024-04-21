@@ -1,0 +1,113 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ .styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.7em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2; /* Upewnij się, że nagłówek jest nad innymi elementami */
+    background-color: #009879; /* Tło, aby uniknąć prześwitującego tekstu */
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+.rate-column {
+    min-width: 150px; /* Dostosuj szerokość do swoich potrzeb */
+    text-align: center;
+}
+
+.center-aligned {
+    text-align: center;
+}
+
+.btn {
+    background-color: #007bff; /* Primary blue */
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    font-size: 14px; /* Larger text size for emphasis */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    max-width: 200px; /* Adjust based on your design */
+    box-sizing: border-box;
+    text-decoration: none; /* Removes underline */
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+  
+
+  .btn:active {
+    transform: scale(0.98);
+  }
+
+  @media (min-width: 768px) {
+    .btn {
+      width: auto;
+    }
+  }
+
+  .user-info {
+    font-size: 12px; /* Larger text size for emphasis */
+    color: #102fca; /* Random color */
+    padding: 5px;
+    margin: 10px 0;
+  }
+
+  @media (max-width: 768px) {
+    .user-info {
+      font-size: 14px; /* Slightly smaller font on small screens */
+    }
+  }
+

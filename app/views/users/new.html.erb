@@ -1,0 +1,5 @@
+<%= form_with(url: users_path, method: :post) do |f| %>
+  <%= f.label :nick, 'Enter Nickname' %>
+  <%= f.text_field :nick %>
+  <%= f.submit 'Submit' %>
+<% end %>

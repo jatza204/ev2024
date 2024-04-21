@@ -1,0 +1,62 @@
+<div class="scrollable-table-container">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Nr</th> <!-- Column header for start number -->
+        <th>Kraj</th>
+        <th>Autor</th>
+        <th>Tytuł</th>
+        <th class="center-aligned">Średnia</th>
+        <th class="center-aligned rate-column">Oceń</th>
+        <th class="center-aligned"><%= current_user.nick %></th>
+        <% @users.reject { |user| user == current_user }.sort_by(&:nick).each do |user| %>
+          <th class="center-aligned"><%= user.nick %></th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+        <tr>
+          <td><%= book.id - 11 %></td> <!-- Subtracting 11 from book ID to adjust numbering -->
+          <td><%= book.country %></td>
+          <td><%= book.author %></td>
+          <td><%= book.title %></td>
+          <td class="center-aligned"><%= @average_ratings[book.id] %></td>
+          <td class="center-aligned rate-column">
+            <!-- Section for adding/updating ratings by the logged-in user -->
+            <% existing_note = book.notes.find_by(user: current_user.nick) %>
+            <% if existing_note %>
+              <%= form_with(model: [book, existing_note], local: true, remote: true, html: { data: { turbo: true, controller: "scroll" } }) do |form| %>
+                <%= form.number_field :note, in: 1..10 %>
+                <%= form.submit "Aktualizuj" %>
+              <% end %>
+            <% else %>
+              <%= form_with(model: [book, book.notes.build(user: current_user)], local: true, remote: true, html: { data: { turbo: true, controller: "scroll" } }) do |form| %>
+                <%= form.number_field :note, in: 1..10 %>
+                <%= form.submit "Dodaj ocenę" %>
+              <% end %>
+            <% end %>
+          </td>
+          <td class="center-aligned">
+            <% existing_note = book.notes.find_by(user: current_user.nick) %>
+            <% if existing_note %>
+              <%= existing_note.note %>/10
+            <% else %>
+              Oceń
+            <% end %>
+          </td>
+          <% @users.reject { |user| user == current_user }.sort_by(&:nick).each do |user| %>
+            <td class="center-aligned">
+              <% existing_note = book.notes.find_by(user: user.nick) %>
+              <% if existing_note %>
+                <%= existing_note.note %>/10
+              <% else %>
+                Oceń
+              <% end %>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
