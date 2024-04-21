@@ -68,3 +68,4 @@ end
 
 gem 'faker'
 gem 'activerecord-import'
+gem 'pg'
