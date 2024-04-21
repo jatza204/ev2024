@@ -7,3 +7,9 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+Book.create([
+  { title: 'Bo wszystkie dzieci', author: 'Majka Jezowska', created_at: '2024-04-21 14:43:09', updated_at: '2024-04-21 14:43:09', country: 'Poland' },
+  { title: 'W ustach mych fajek smak', author: 'Karol Czarnecki', created_at: '2024-04-21 14:43:09', updated_at: '2024-04-21 14:43:09', country: 'Sweden' },
+  { title: 'Gejowo.pl', author: 'SQL bez S', created_at: '2024-04-21 14:43:09', updated_at: '2024-04-21 14:43:09', country: 'Holland' }
+])

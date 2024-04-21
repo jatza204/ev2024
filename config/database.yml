@@ -8,15 +8,15 @@ default: &default
 development:
   <<: *default
   database: myapp_development
-  username: <%= ENV['DB_USERNAME'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
+  username: <%= ENV['EmeruKidu'] %>
+  password: <%= ENV['Duala'] %>
   host: <%= ENV['DB_HOST'] %>
 
 test:
   <<: *default
   database: myapp_test
-  username: <%= ENV['DB_USERNAME'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
+  username: <%= ENV['EmeruKidu'] %>
+  password: <%= ENV['Duala'] %>
   host: <%= ENV['DB_HOST'] %>
 
 production:
