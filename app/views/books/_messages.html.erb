@@ -1,4 +1,8 @@
 <!-- app/views/books/_messages.html.erb -->
-<% messages.each do |message| %>
-  <p><%= message[:timestamp].strftime("%H:%M:%S") %> <strong><%= message[:username] %>:</strong> <%= message[:body] %></p>
+<% if messages.present? %>
+  <% messages.each do |message| %>
+    <p><%= message.created_at.strftime("%H:%M:%S") %> <strong><%= message.username %>:</strong> <%= message.body %></p>
+  <% end %>
+<% else %>
+  <p>No messages to display.</p>
 <% end %>
