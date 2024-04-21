@@ -6,7 +6,7 @@
       <%= form.submit "Send", class: "chat-submit" %>
     <% end %>
     <div id="chat_window">
-      <%= render partial: "books/messages", locals: { messages: $chat_messages.last(30) } %>
+      <%= render partial: "books/messages", locals: { messages: @messages } %>
     </div>
   <% end %>
 </div>
@@ -21,4 +21,3 @@ document.addEventListener('turbo:submit-end', (event) => {
   }
 });
 </script>
-
