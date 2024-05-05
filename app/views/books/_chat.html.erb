@@ -1,10 +1,12 @@
 <!-- app/views/books/_chat.html.erb -->
+
 <div id="chat_window_outer">
   <%= turbo_frame_tag "chat_frame" do %>
     <%= form_with url: chat_path, method: :post, id: 'chat_form', data: { turbo_frame: "chat_frame" } do |form| %>
       <%= form.text_field :message_body, placeholder: "Type your message here...", required: true, class: "chat-input" %>
       <%= form.submit "Send", class: "chat-submit" %>
     <% end %>
+    <button id="refresh_chat" class="chat-refresh">Refresh</button>
     <div id="chat_window">
       <%= render partial: "books/messages", locals: { messages: @messages } %>
     </div>
@@ -19,5 +21,15 @@ document.addEventListener('turbo:submit-end', (event) => {
       inputField.value = '';  // Clear the text input field
     }
   }
+});
+</script>
+
+<script>
+document.querySelector('#refresh_chat').addEventListener('click', function() {
+  fetch('/latest_messages')
+    .then(response => response.text())
+    .then(data => {
+      document.querySelector('#chat_window').innerHTML = data;
+    });
 });
 </script>

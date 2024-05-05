@@ -15,7 +15,7 @@
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Spacing between form elements */
+    gap: 1px; /* Spacing between form elements */
   }
   
   /* Specific labels in login form */
@@ -47,3 +47,16 @@
     background-color: #004494; /* A darker shade of blue on hover */
   }
   
+  .info-text {
+    font-size: 2em; /* Increase the font size */
+    color: #333; /* Dark grey color */
+    text-align: center; /* Center the text */
+    font-weight: bold; /* Make the text bold */
+    text-transform: uppercase; /* Convert the text to uppercase */
+    letter-spacing: 1px; /* Increase the spacing between letters */
+    padding: 20px; /* Add some padding */
+    background-color: #f8f9fa; /* Light grey background */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 20px; /* Add some space below the text */
+  }
+ 

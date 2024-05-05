@@ -26,3 +26,21 @@
 #chat_window {
     padding: 10px;
 }
+
+/* Adjustments for small screens */
+@media only screen and (max-width: 600px) {
+  #chat_window_outer {
+    height: 200px;
+    font-size: 12px;
+  }
+
+  .chat-input,
+  .chat-submit {
+    height: 30px;
+    margin-bottom: 5px;
+  }
+
+  #chat_window {
+    padding: 5px;
+  }
+}

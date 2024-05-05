@@ -50,6 +50,7 @@ class BooksController < ApplicationController
     average_ratings.transform_values do |avg|
       avg == 'Brak ocen' ? avg : ranks[avg]
     end
+
   end
 end
 

@@ -1,4 +1,5 @@
 <%= form_with(url: users_path, method: :post) do |f| %>
+  <p>Wpisz nazwę uzytkownika. Haslo nie bedzie potrzebne.</p>
   <%= f.label :nick, 'Enter Nickname' %>
   <%= f.text_field :nick %>
   <%= f.submit 'Submit' %>

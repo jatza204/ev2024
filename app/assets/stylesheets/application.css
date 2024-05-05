@@ -15,99 +15,118 @@
  */
 
  .styled-table {
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.7em;
-    font-family: sans-serif;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.7em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .styled-table thead th {
-    position: sticky;
-    top: 0;
-    z-index: 2; /* Upewnij się, że nagłówek jest nad innymi elementami */
-    background-color: #009879; /* Tło, aby uniknąć prześwitującego tekstu */
+  position: sticky;
+  top: 0;
+  z-index: 2; /* Make sure the header is above other elements */
+  background-color: #009879; /* Background to avoid see-through text */
 }
 
 .styled-table thead tr {
-    background-color: #009879;
-    color: #ffffff;
-    text-align: left;
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
 }
 
 .styled-table th,
 .styled-table td {
-    padding: 12px 15px;
+  padding: 12px 15px;
 }
 
 .styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
 }
 
 .styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+  background-color: #f3f3f3;
 }
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
+  border-bottom: 2px solid #009879;
 }
 
 .styled-table tbody tr.active-row {
-    font-weight: bold;
-    color: #009879;
+  font-weight: bold;
+  color: #009879;
 }
 
 .rate-column {
-    min-width: 150px; /* Dostosuj szerokość do swoich potrzeb */
-    text-align: center;
+  min-width: 150px; /* Adjust width to your needs */
+  text-align: center;
 }
 
 .center-aligned {
-    text-align: center;
+  text-align: center;
 }
 
 .btn {
-    background-color: #007bff; /* Primary blue */
-    color: white;
-    padding: 8px 15px;
-    border: none;
-    font-size: 14px; /* Larger text size for emphasis */
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s;
-    width: 100%;
-    max-width: 200px; /* Adjust based on your design */
-    box-sizing: border-box;
-    text-decoration: none; /* Removes underline */
-  }
-  
-  .btn:hover {
-    background-color: #0056b3;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-  }
-  
+  background-color: #007bff; /* Primary blue */
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  font-size: 14px; /* Larger text size for emphasis */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+  max-width: 200px; /* Adjust based on your design */
+  box-sizing: border-box;
+  text-decoration: none; /* Removes underline */
+}
 
-  .btn:active {
-    transform: scale(0.98);
-  }
+.btn:hover {
+  background-color: #0056b3;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
 
-  @media (min-width: 768px) {
-    .btn {
-      width: auto;
-    }
-  }
+.btn:active {
+  transform: scale(0.98);
+}
 
+@media (min-width: 768px) {
+  .btn {
+    width: auto;
+  }
+}
+
+.user-info {
+  font-size: 12px; /* Larger text size for emphasis */
+  color: #102fca; /* Random color */
+  padding: 5px;
+  margin: 10px 0;
+}
+
+@media (max-width: 768px) {
   .user-info {
-    font-size: 12px; /* Larger text size for emphasis */
-    color: #102fca; /* Random color */
-    padding: 5px;
-    margin: 10px 0;
+    font-size: 14px; /* Slightly smaller font on small screens */
   }
+}
 
-  @media (max-width: 768px) {
-    .user-info {
-      font-size: 14px; /* Slightly smaller font on small screens */
-    }
+/* Make table scrollable on small devices */
+@media only screen and (max-width: 600px) {
+  .scrollable-table-container {
+    overflow-x: auto;
   }
+}
 
+/* Base styles for info container */
+.info-container {
+  margin-bottom: 10px; /* Reduce the space below the container */
+  background-color: #f8f9fa; /* Light grey background */
+  padding: 10px; /* Add some padding */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.info-text {
+  font-size: 1.2em; /* Increase the font size */
+  color: #333; /* Dark grey color */
+  text-align: center; /* Center the text */
+}

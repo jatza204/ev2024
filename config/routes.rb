@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # config/routes.rb
   get 'chat', to: 'chat#index', as: 'chat'
   post 'chat', to: 'chat#create'
+  get 'latest_messages', to: 'chat#latest_messages'
   # Ensure you have other necessary routes defined as well
 end
 

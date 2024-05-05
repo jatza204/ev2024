@@ -24,4 +24,9 @@ class ChatController < ApplicationController
       }
     end
   end
+
+  def latest_messages
+    @messages = ChatMessage.order(created_at: :desc).limit(20)
+    render partial: "books/messages", locals: { messages: @messages }, layout: false
+  end
 end
